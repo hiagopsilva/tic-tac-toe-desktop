@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+    <h1 id="title"> Jogo da Velha </h1>
+
+    <div id="names">
+        <div class="form-group">
+            <input id="label" type ="text" class="form-control " placeholder = "nome do Jogador 1">
+
+            <input id="label" type ="text" class="form-control" placeholder = "nome do Jogador 2">
+
+            <input id="check" type ="button" class="btn btn-primary btn btn-dark glyphicon glyphicon-play-circle" value= "Confimar Jogadores" onclick = "">
+        </div>
+    </div>
+    
+    <div id="btn_refresh">
+        <input type = "button"  class="btn btn-dark glyphicon glyphicon-play-circle" value = "Reiniciar o jogo" onCLick = "document.location.reload (true)" >
+
+        <input type = "button" id="btn_placar" class="btn btn-dark" value = "Ver o Placar" onCLick = "document.location.reload (true)" >
+    </div>
+    
+    <!-- <div>
+        <input type ="text" class="form-control" placeholder = "nome do Jogador 1">
+        <input type ="button" class="btn btn-primary" value= "Confimar" onclick = "">
+    </div>
+
+    <div>
+        <input type ="text" class="form-control" placeholder = "nome do Jogador 2">
+        <input type ="button" class="btn btn-primary" value= "Confimar" onclick = "">
+    </div> -->
+
+    <div class='game'></div>
+
+    <script src="js/tic-tac-toe.js"></script>
+    
+    <script>
+        tic_tac_toe.init( document.querySelector('.game') );
+        tic_tac_toe.start();
+    </script>  
+
+    <br>
+    <br>
+    <br>
+
+</body>
+</html>

@@ -32,8 +32,8 @@ const tic_tac_toe = {
             this.draw();
             
             var winning_sequences_index = this.check_winning_sequences( this.symbols.options[this.symbols.turn_index] );
-            
-            console.log(winning_sequences_index)
+
+            this.switch_players();
 
             if (winning_sequences_index >= 0 || !this.is_winner()) { 
                 this.game_is_over();
@@ -41,15 +41,12 @@ const tic_tac_toe = {
             } else{
                 this.symbols.change();
             }
-
             return true;
         }
         else {
             return false;
         }
     },
-
-    
 
     check_winning_sequences: function(simbol) {
         for ( i in this.winning_sequences ) {
@@ -64,14 +61,6 @@ const tic_tac_toe = {
 
     game_is_over: function() {
         this.gameover = true;
-
-        for (i in this.board){
-            // console.log(i)
-            if (this.board[i] != '') {
-                console.log('vazio')
-                console.log(this.winning_sequences_index)
-            } 
-        }
 
         document.querySelector('.game').style.opacity = 0.2;
         document.querySelector('.game').style.cursor = "default";
@@ -89,12 +78,27 @@ const tic_tac_toe = {
         for ( i in this.board ) {
             content += '<div onclick="tic_tac_toe.make_play(' + i + ')">' + this.board[i] + '</div>';
         };
-
         this.container_element.innerHTML = content;
     },
 
     is_winner() {
         return this.board.includes('')
+    },
+
+    switch_players() {
+        var containerPlayerOne = document.querySelector('#containerPlayerOne');
+        var containerPlayerTwo = document.querySelector('#containerPlayerTwo');
+
+        if (!this.is_winner()) {
+            containerPlayerOne.style.opacity = 1;
+            containerPlayerTwo.style.opacity = 1;   
+        } else if (this.symbols.turn_index == 0) {
+            containerPlayerOne.style.opacity = 1;
+            containerPlayerTwo.style.opacity = 0.2;   
+        } else {
+            containerPlayerOne.style.opacity = 0.2;
+            containerPlayerTwo.style.opacity = 1;
+        }
     },
 
     playerWinning: function() {
@@ -107,11 +111,11 @@ const tic_tac_toe = {
         if(!this.is_winner()) {
             playerOneElement.innerHTML = "DRAW!!";
             playerTwoElement.innerHTML = "DRAW!!";
-
+            
         } else if (this.symbols.turn_index == 0) {
             playerOneElement.innerHTML = "WIN!"
             playerOneElement.style.display = "block";
-            
+            console.log('cheuge')
         } else {
             playerTwoElement.innerHTML = "WIN!";
             playerTwoElement.style.display = "block";

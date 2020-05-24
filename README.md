@@ -14,6 +14,11 @@
 
 > Tic tac toe game with Electron
 
+![gif (1)](https://user-images.githubusercontent.com/47197695/82746481-a04f5480-9d66-11ea-96d5-758a94e8e150.gif)
+
+![gif (2)](https://user-images.githubusercontent.com/47197695/82746479-9fb6be00-9d66-11ea-821b-81b8eb036b13.gif)
+
+
 ## Install
 
 ```sh

@@ -14,8 +14,6 @@
 
 > Tic tac toe game with Electron
 
-### 🏠 [Homepage](https://github.com/hiagopsilva/tic-tac-toe#readme)
-
 ## Install
 
 ```sh
@@ -25,15 +23,18 @@ npm install
 ## Usage
 
 ```sh
-npm run start
+npm start
 ```
+
+## Dependencies 
+ * electron
 
 ## Author
 
 👤 **Hiago Prates**
 
 * Github: [@hiagopsilva](https://github.com/hiagopsilva)
-* LinkedIn: [@https:\/\/www.linkedin.com\/in\/hiago-prates-04902b132\/](https://linkedin.com/in/https:\/\/www.linkedin.com\/in\/hiago-prates-04902b132\/)
+* LinkedIn: [@https:\/\/www.linkedin.com\/in\/hiago-prates-04902b132\/](https://linkedin.com/in/hiago-prates-04902b132\/)
 
 ## 🤝 Contributing
 
@@ -42,6 +43,8 @@ Contributions, issues and feature requests are welcome!<br />Feel free to check 
 ## Show your support
 
 Give a ⭐️ if this project helped you!
+
+**if you find any bug or error, leave me a pull request!**
 
 ## 📝 License
 

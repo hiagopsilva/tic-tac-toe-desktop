@@ -1,0 +1,23 @@
+{
+  "name": "tic-tac-toe-electron",
+  "version": "1.0.0",
+  "description": "Tic tac toe game with Electron",
+  "main": "index.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiagopsilva/tic-tac-toe.git"
+  },
+  "keywords": [],
+  "author": "Hiago Prates",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiagopsilva/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/hiagopsilva/tic-tac-toe#readme",
+  "dependencies": {
+    "electron": "^9.0.0"
+  }
+}

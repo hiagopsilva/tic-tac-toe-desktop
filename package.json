@@ -2,7 +2,7 @@
   "name": "tic-tac-toe-electron",
   "version": "1.0.0",
   "description": "Tic tac toe game with Electron",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "electron ."
   },

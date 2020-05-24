@@ -33,13 +33,12 @@ const tic_tac_toe = {
             
             var winning_sequences_index = this.check_winning_sequences( this.symbols.options[this.symbols.turn_index] );
 
-            this.switch_players();
-
             if (winning_sequences_index >= 0 || !this.is_winner()) { 
                 this.game_is_over();
                 this.playerWinning();
             } else{
                 this.symbols.change();
+                this.switch_players();
             }
             return true;
         }
@@ -88,11 +87,8 @@ const tic_tac_toe = {
     switch_players() {
         var containerPlayerOne = document.querySelector('#containerPlayerOne');
         var containerPlayerTwo = document.querySelector('#containerPlayerTwo');
-
-        if (!this.is_winner()) {
-            containerPlayerOne.style.opacity = 1;
-            containerPlayerTwo.style.opacity = 1;   
-        } else if (this.symbols.turn_index == 0) {
+        
+        if (this.symbols.turn_index == 0) {
             containerPlayerOne.style.opacity = 1;
             containerPlayerTwo.style.opacity = 0.2;   
         } else {
@@ -105,20 +101,30 @@ const tic_tac_toe = {
         var playerOneElement = document.querySelector('.playerOne');
         var playerTwoElement = document.querySelector('.playerTwo');
 
+        var containerPlayerOne = document.querySelector('#containerPlayerOne');
+        var containerPlayerTwo = document.querySelector('#containerPlayerTwo');
+
         playerOneElement.style.color = "red";
         playerTwoElement.style.color = "red";
 
         if(!this.is_winner()) {
             playerOneElement.innerHTML = "DRAW!!";
             playerTwoElement.innerHTML = "DRAW!!";
-            
+
+            containerPlayerOne.style.opacity = 1;
+            containerPlayerTwo.style.opacity = 1;
         } else if (this.symbols.turn_index == 0) {
             playerOneElement.innerHTML = "WIN!"
             playerOneElement.style.display = "block";
-            console.log('cheuge')
+
+            containerPlayerOne.style.opacity = 1;
+            containerPlayerTwo.style.opacity = 0.2; 
         } else {
             playerTwoElement.innerHTML = "WIN!";
             playerTwoElement.style.display = "block";
+
+            containerPlayerOne.style.opacity = 0.2;
+            containerPlayerTwo.style.opacity = 1; 
         }
     },
 

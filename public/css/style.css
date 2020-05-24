@@ -119,13 +119,8 @@ h1.indicatorPlayer {
   font-size: 90px;
 }
 
-h1.playerOneWin, h1.playerTwoWin{
-  /* margin-top: 0; */
+h1.playerOneWin, h1.playerTwoWin {
   display: none;
-  color: red;
-  font-size: 50px;
-  display: none;
-  color: red;
   font-size: 50px;
 }
 

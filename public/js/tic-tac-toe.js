@@ -30,19 +30,26 @@ const tic_tac_toe = {
         if (this.board[position] === ''){
             this.board[position] = this.symbols.options[this.symbols.turn_index];
             this.draw();
-            let winning_sequences_index = this.check_winning_sequences( this.symbols.options[this.symbols.turn_index] );
-            if (winning_sequences_index >= 0){
+            
+            var winning_sequences_index = this.check_winning_sequences( this.symbols.options[this.symbols.turn_index] );
+            
+            console.log(winning_sequences_index)
+
+            if (winning_sequences_index >= 0 || !this.is_winner()) { 
                 this.game_is_over();
-                this.PlayerWinning();
+                this.playerWinning();
             } else{
                 this.symbols.change();
             }
+
             return true;
         }
         else {
             return false;
         }
     },
+
+    
 
     check_winning_sequences: function(simbol) {
         for ( i in this.winning_sequences ) {
@@ -57,6 +64,14 @@ const tic_tac_toe = {
 
     game_is_over: function() {
         this.gameover = true;
+
+        for (i in this.board){
+            // console.log(i)
+            if (this.board[i] != '') {
+                console.log('vazio')
+                console.log(this.winning_sequences_index)
+            } 
+        }
 
         document.querySelector('.game').style.opacity = 0.2;
         document.querySelector('.game').style.cursor = "default";
@@ -78,12 +93,28 @@ const tic_tac_toe = {
         this.container_element.innerHTML = content;
     },
 
-    PlayerWinning: function() {
-        if(this.symbols.turn_index == 0) {
-            document.querySelector('.playerOneWin').style.display = "block";
+    is_winner() {
+        return this.board.includes('')
+    },
+
+    playerWinning: function() {
+        var playerOneElement = document.querySelector('.playerOne');
+        var playerTwoElement = document.querySelector('.playerTwo');
+
+        playerOneElement.style.color = "red";
+        playerTwoElement.style.color = "red";
+
+        if(!this.is_winner()) {
+            playerOneElement.innerHTML = "DRAW!!";
+            playerTwoElement.innerHTML = "DRAW!!";
+
+        } else if (this.symbols.turn_index == 0) {
+            playerOneElement.innerHTML = "WIN!"
+            playerOneElement.style.display = "block";
             
         } else {
-            document.querySelector('.playerTwoWin').style.display = "block";
+            playerTwoElement.innerHTML = "WIN!";
+            playerTwoElement.style.display = "block";
         }
     },
 

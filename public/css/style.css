@@ -91,6 +91,10 @@ body {
   cursor: pointer;
 }
 
+div.header-scoreboard {
+  display: none;
+}
+
 .container {
   display: flex;
   justify-content: space-around;
@@ -124,3 +128,46 @@ h1.playerOneWin, h1.playerTwoWin {
   font-size: 50px;
 }
 
+@media (max-width: 700px) {
+  div.container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  div.container div#containerPlayerOne {
+    display: none;
+  }
+
+  div.container div#containerPlayerTwo {
+    display: none;
+  }
+
+  div.container div.header-scoreboard {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+
+    width: 100%;
+    height: 150px;
+    padding: 60px 80px;
+  }
+
+  div.container div.game {
+    width: 90%;
+    height: 350px;
+  }
+
+  div.container button.playAgain {
+    top: 68%;
+  }
+
+  div.container div.header-scoreboard div#containerPlayerOne {
+    display: flex;
+    margin-top: 0;
+  }
+  
+  div.container div.header-scoreboard div#containerPlayerTwo {
+    display: flex;
+    margin-top: 0;
+  }
+}

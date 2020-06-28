@@ -14,6 +14,9 @@
 
 > Tic tac toe game with Electron
 
+# DEMO
+https://tic-tac-toe-desktop.netlify.app/
+
 ![gif (3)](https://user-images.githubusercontent.com/47197695/82761634-6451d900-9dd2-11ea-91c0-bb4769a7b350.gif)
 
 ![gif (4)](https://user-images.githubusercontent.com/47197695/82761635-65830600-9dd2-11ea-9b38-6e6b72a62304.gif)
